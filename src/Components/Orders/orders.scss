@@ -1,17 +1,142 @@
+// .orders {
+//   display: grid;
+//   grid-template-columns: 17% 83%;
+//   justify-content: center;
+
+//   .orders_main {
+//     display: flex;
+//     flex-direction: column; /* Stack content vertically */
+//     padding: 20px;
+
+//     .order_button {
+//       display: flex;
+//       justify-content: center; /* Center the button horizontally */
+//       margin-top: 20px; /* Space above the button */
+//       padding-left: 1130px;
+//     }
+
+//     .order_button button {
+//       background-color: #007bff;
+//       color: white;
+//       border: none;
+//       border-radius: 5px;
+//       padding: 10px 20px;
+//       font-size: 16px;
+//       cursor: pointer;
+//       transition: background-color 0.3s ease;
+//     }
+
+//     .order_button button:hover {
+//       background-color: #0056b3;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: 992px) {
+//   .orders {
+//     grid-template-columns: 100%;
+
+//     .home_sidebar {
+//       display: none;
+//     }
+//   }
+// }
+
 .orders {
   display: grid;
   grid-template-columns: 17% 83%;
   justify-content: center;
+
+  .orders_main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .order_ai_section {
+      margin-top: 20px;
+      padding: 20px;
+      
+      .order_input {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        .query_type_select {
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          background-color: white;
+          min-width: 150px;
+        }
+
+        .query_input {
+          padding: 8px 12px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          width: 200px;
+        }
+      }
+
+      .ask_ai_button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+
+        &:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+        }
+      }
+
+      .ai_response {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+
+        h3 {
+          margin-bottom: 10px;
+          color: #333;
+        }
+
+        p {
+          white-space: pre-wrap;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 992px) {
   .orders {
-    display: grid;
     grid-template-columns: 100%;
-    justify-content: center;
 
     .home_sidebar {
       display: none;
+    }
+
+    .order_ai_section {
+      .order_input {
+        flex-direction: column;
+        align-items: stretch;
+        
+        .query_type_select,
+        .query_input {
+          width: 100%;
+        }
+      }
     }
   }
 }
